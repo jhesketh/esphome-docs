@@ -196,8 +196,9 @@ through an ``on_boot`` trigger:
 
     esphome:
       on_boot:
-        - lambda: |-
-            id(my_ota).set_auth_password("New password");
+        then:
+          - lambda: |-
+              id(my_ota).set_auth_password("New password");
     ota:
       password: "Old password"
       id: my_ota
